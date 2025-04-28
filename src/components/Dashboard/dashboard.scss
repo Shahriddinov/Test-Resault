@@ -1,0 +1,66 @@
+@import "src/assest/style/global";
+.dashboard {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  &_stats{
+    width: 70%;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    border: 1px solid red;
+    &_card{
+      width: 28%;
+      height: 85px;
+      padding: 15px 15px;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      border-radius: 10px;
+      &:nth-child(3){
+        background: black;
+      }
+      &_statsIcon{
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background: #dfdddd;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        &_allIcon{
+          font-size: 20px;
+        }
+        &_title{
+          display: block;
+          font-size: 13px;
+          color: #BDBCBCFF;
+          font-weight: bold;
+
+          strong{
+            font-size: 18px;
+            color: black;
+          }
+        }
+      }
+      &_des{
+        display: flex;
+       align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        &_right{
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  &_calendar{
+    width: 30%;
+    border: 1px solid blue;
+  }
+}
