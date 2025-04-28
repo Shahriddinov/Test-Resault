@@ -1,0 +1,118 @@
+@import "../../../../assest/style/global";
+.mainCard{
+  width: 70%;
+}
+.mainRight{
+  width: 30%;
+}
+.results{
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+  font-size: 30px;
+  color: $primary-color;
+  font-weight: bold;
+
+}
+.cards {
+
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  padding: 30px;
+  text-align: center;
+  width: 500px;
+  margin: auto;
+}
+
+.circle {
+  background: linear-gradient(135deg, #ffebeb, #ffe4ff);
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.percent {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f44336;
+}
+
+.tryAgain {
+  font-size: 14px;
+  color: #d32f2f;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.resultBlock {
+  text-align: center;
+}
+
+.correctNum {
+  color: green;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.incorrectNum {
+  color: red;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.totalNum {
+  color: blue;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.answerBar {
+  margin-top: 20px;
+  height: 20px;
+  background: #eee;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.incorrectBar {
+  width: 100%;
+  height: 100%;
+  background: red;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  gap: 15px;
+}
+
+.restart {
+  background: #ffc107;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.share {
+  background: white;
+  border: 2px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}

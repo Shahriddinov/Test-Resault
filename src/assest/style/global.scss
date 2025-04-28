@@ -1,0 +1,28 @@
+$primary-color: #f0487a;
+$yellow-color:#ffc46b;
+$dark-bg: #1e1e2f;
+$light-bg: #f5f5f5;
+$sidebar-bg: #121212;
+$text-color: #ffffff;
+$gray-text: #6c6b6b;
+$accent-gradient: linear-gradient(to right, #f0487a, #ffc46b);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html, body {
+  font-family: 'Segoe UI', sans-serif;
+  //background: linear-gradient(90deg, #1c1c1c, #2a2a2a);
+  scroll-behavior: smooth;
+  //color: #fff;
+
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

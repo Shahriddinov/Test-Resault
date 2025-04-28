@@ -1,0 +1,122 @@
+@import "../../../assest/style/global";
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: url('../../../assest/images/autho__bg-img__left.png') no-repeat left center,
+  url('../../../assest/images/background-image.png') no-repeat right center;
+  background-size: auto 122.5vh, auto 100vh;
+  background-color: #efeae2;
+
+}
+
+
+.auth-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 380px;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  p {
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 14px;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+  }
+
+  a {
+    font-size: 12px;
+    color: #000;
+    text-align: left;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .primary-btn {
+    background-color: #facc15;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #eab308;
+    }
+  }
+
+  .divider {
+    margin: 20px 0;
+    position: relative;
+    font-size: 13px;
+    color: #666;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background-color: #ccc;
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+  }
+
+  .social-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    &_socialIcon{
+
+      width: 15px;
+      height: 15px;
+    }
+    button {
+      flex: 1;
+      margin: 0 5px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #fff;
+      cursor: pointer;
+      display: flex;
+      font-weight: bold;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+
+      &:hover {
+        background-color: #f3f3f3;
+      }
+    }
+  }
+}

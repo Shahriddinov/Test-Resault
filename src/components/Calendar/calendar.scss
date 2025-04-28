@@ -1,0 +1,90 @@
+@import "src/assest/style/global";
+
+.calendar {
+  background: #fff;
+  padding: 0 25px;
+  border-radius: 12px;
+  color: #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+
+  .date {
+    font-size: 13px;
+    color: #BDBCBCFF;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  &_events {
+    list-style: none;
+    padding: 0;
+
+    &_item {
+      display: flex;
+      //align-items: end;
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 10px;
+
+      &_rightLine {
+        margin-right: 10px;
+
+        border-left: 1px solid black;
+      }
+
+      strong {
+        margin-right: 8px;
+      }
+    }
+
+    &_bottomLine {
+      margin-bottom: 10px;
+      border-bottom: 1px solid #BDBCBC;
+
+    }
+  }
+
+  &_allEvents {
+    width: 100%;
+    padding: 15px 15px;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 15px;
+    border: 1px solid black;
+    outline: none;
+    cursor: pointer;
+    margin-top: 10px;
+
+    &:hover {
+      background: #121212;
+      color: $yellow-color;
+    }
+  }
+
+  .card {
+    background: linear-gradient(135deg, #f0487a, #ffc46b);
+    border-radius: 16px;
+    padding: 20px;
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    &_subP{
+      font-size: 26px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ffca28;
+      border: none;
+      border-radius: 8px;
+      color: black;
+      font-weight: 600;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #ffc107;
+      }
+    }
+  }
+
+}
