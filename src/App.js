@@ -22,7 +22,7 @@ const routes = [
     { path: "/settings", element: Settings, isPublic: true, authOnly: false },
     { path: "/register", element: Register, isPublic: true, authOnly: false },
     { path: "/courses", element: Courses },
-    { path: "/exams", element: Exams },
+    { path: "/exams/:id", element: Exams },
     { path: "/result", element: ExamsResult },
 ];
 

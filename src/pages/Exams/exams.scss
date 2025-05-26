@@ -32,6 +32,9 @@
     }
 
     .quiz-progress {
+      display: flex;
+      gap: 15px;
+      align-items: center;
       font-size: 18px;
       font-weight: 600;
       color: #333;
@@ -111,4 +114,9 @@
       }
     }
   }
+}
+.answer-button.selected {
+  background-color: #458ff6;
+  color: white;
+  border: none;
 }

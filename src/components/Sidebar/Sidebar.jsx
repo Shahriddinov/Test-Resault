@@ -1,138 +1,121 @@
-import React, {useState} from 'react';
-import "./style.scss";
-import {Link, useLocation, useNavigate} from "react-router-dom";
-import "react-datepicker/dist/react-datepicker.css";
+import React, { useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
-    FaComments,
-    FaCog,
-    FaGraduationCap,
-    FaHome,
-    FaBookOpen,
-    FaUserCircle
-} from "react-icons/fa";
-import {TbLogout} from "react-icons/tb";
+  FaComments, FaCog, FaGraduationCap, FaHome, FaBookOpen, FaUserCircle,
+} from 'react-icons/fa';
+import { TbLogout } from 'react-icons/tb';
+import { IoNotificationsOutline } from 'react-icons/io5';
+import { CiCalendarDate } from 'react-icons/ci';
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
+import { Button, Layout, Menu, theme } from 'antd';
+import './style.scss';
 
-import {IoNotificationsOutline} from "react-icons/io5";
-import {CiCalendarDate} from "react-icons/ci";
-import {
-    MenuFoldOutlined,
-    MenuUnfoldOutlined,
-} from '@ant-design/icons';
-import {Button, Layout, Menu, theme} from 'antd';
+const { Header, Sider, Content } = Layout;
 
-const {Header, Sider, Content} = Layout;
-const Sidebar = ({title, children}) => {
-    const navigate = useNavigate(); // 🧭 yo‘naltirish uchun
+const Sidebar = ({ title, children }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [collapsed, setCollapsed] = useState(false);
 
+  const logout = () => {
+    sessionStorage.removeItem('authToken');
+    navigate('/login');
+  };
 
-    const logout = () => {
-        sessionStorage.removeItem('authToken');
-        navigate('/login');
-    };
-    const location = useLocation();
-    const [collapsed, setCollapsed] = useState(false);
-    const selectedKey = (() => {
-        if (location.pathname === "/") return "1";
-        if (location.pathname === "/courses") return "2";
-        if (location.pathname === "/chats") return "3";
-        if (location.pathname === "/grades") return "4";
-        if (location.pathname === "/settings") return "5";
-        return ""; // Fallback
-    })();
-    const {
-        token: {colorBgContainer, borderRadiusLG},
-    } = theme.useToken();
-    return (
-        <Layout className="sidebar">
-            <Sider trigger={null} collapsible collapsed={collapsed}>
+  const selectedKey = (() => {
+    switch (location.pathname) {
+      case '/': return '1';
+      case '/courses': return '2';
+      case '/chats': return '3';
+      case '/grades': return '4';
+      case '/settings': return '5';
+      default: return '';
+    }
+  })();
 
-                <h1 className="logo">Academyis</h1>
-                <Menu
-                    theme="dark"
-                    mode="inline"
-                    selectedKeys={[selectedKey]}
-                    items={[
-                        {
-                            key: '1',
-                            icon: <FaHome/>,
-                            label: <Link to="/">Dashboard</Link>,
-                        },
-                        {
-                            key: '2',
-                            icon: <FaBookOpen/>,
-                            label: <Link to="/courses">Courses</Link>,
-                        },
-                        {
-                            key: '3',
-                            icon: <FaComments/>,
-                            label: 'Chats',
-                        },
-                        {
-                            key: '4',
-                            icon: <FaGraduationCap/>,
-                            label: 'Grades',
-                        },
-                        {
-                            key: '5',
-                            icon: <FaCog/>,
-                            label: <Link to="/settings">Settings</Link>,
-                        },
-                        {
-                            key: 'logout',
-                            icon: <TbLogout/>,
-                            label: 'Logout',
-                            onClick: logout, // 👈 Logout funksiyasini ulash
-                        },
-                    ]}
-                />
-            </Sider>
-            <Layout>
-                <Header style={{padding: 0, background: colorBgContainer, display: 'flex', alignItems: 'center'}}>
-                    <Button
-                        type="text"
-                        icon={collapsed ? <MenuUnfoldOutlined/> : <MenuFoldOutlined/>}
-                        onClick={() => setCollapsed(!collapsed)}
-                        style={{
-                            fontSize: '16px',
-                            width: 64,
-                            height: 64,
-                        }}
-                    />
-                    <div className="navSidebar">
-                        <h1>{title}</h1>
-                        <div style={{display: "flex", alignItems: 'center', gap: "50px"}}>
-                            <div className="navSidebar_avatar">
-                                <div className="navSidebar_d-flex_iconsSilader">
-                                    <IoNotificationsOutline className="icons"/>
-                                </div>
-                                <Link to="/login" className="navSidebar_d-flex_iconsSilader"><FaUserCircle
-                                    className="iconsAvatar"/></Link>
-                            </div>
-                            <div className="navSidebar_d-flex">
-                                <h1 className="avatar">Calendar</h1>
-                                <div className="navSidebar_d-flex_iconsSilader">
-                                    <CiCalendarDate className="icons" />
-                                </div>
+  const {
+    token: { colorBgContainer, borderRadiusLG },
+  } = theme.useToken();
 
-                            </div>
-                        </div>
-
-                    </div>
-                </Header>
-                <Content
-                    style={{
-                        margin: '24px 16px',
-                        padding: 24,
-                        minHeight: 280,
-                        background: colorBgContainer,
-                        borderRadius: borderRadiusLG,
-                    }}
-                >
-                    {children}
-                </Content>
-            </Layout>
-        </Layout>
-    );
+  return (
+    <Layout className="sidebar">
+      <Sider trigger={null} collapsible collapsed={collapsed}>
+        <div className="logo" aria-label="App Logo">Academyis</div>
+        <Menu
+          theme="dark"
+          mode="inline"
+          selectedKeys={[selectedKey]}
+          items={[
+            {
+              key: '1',
+              icon: <FaHome />,
+              label: <Link to="/">Dashboard</Link>,
+            },
+            {
+              key: '2',
+              icon: <FaBookOpen />,
+              label: <Link to="/courses">Courses</Link>,
+            },
+            {
+              key: '3',
+              icon: <FaComments />,
+              label: 'Chats',
+            },
+            {
+              key: '4',
+              icon: <FaGraduationCap />,
+              label: 'Grades',
+            },
+            {
+              key: '5',
+              icon: <FaCog />,
+              label: <Link to="/settings">Settings</Link>,
+            },
+            {
+              key: 'logout',
+              icon: <TbLogout />,
+              label: 'Logout',
+              onClick: logout,
+            },
+          ]}
+        />
+      </Sider>
+      <Layout>
+        <Header className="sidebar__header">
+          <Button
+            type="text"
+            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+            onClick={() => setCollapsed(!collapsed)}
+            aria-label="Toggle sidebar"
+            className="sidebar__toggle"
+          />
+          <div className="sidebar__nav">
+            <h1>{title}</h1>
+            <div className="sidebar__right">
+              <div className="sidebar__icon-wrapper" aria-label="Notifications">
+                <IoNotificationsOutline className="sidebar__icon" />
+              </div>
+              <Link to="/login" className="sidebar__icon-wrapper" aria-label="User Profile">
+                <FaUserCircle className="sidebar__icon" />
+              </Link>
+              <div className="sidebar__calendar">
+                <h1 className="sidebar__calendar-title">Calendar</h1>
+                <div className='sidebar__icon-wrapper'>
+                <CiCalendarDate className="sidebar__icon" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </Header>
+        <Content
+          className="sidebar__content"
+          style={{ background: colorBgContainer, borderRadius: borderRadiusLG }}
+        >
+          {children}
+        </Content>
+      </Layout>
+    </Layout>
+  );
 };
 
 export default Sidebar;

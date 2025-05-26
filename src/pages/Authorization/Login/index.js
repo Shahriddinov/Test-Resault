@@ -28,6 +28,7 @@ const LoginPage = () => {
                 const result = await dispatch(loginUser(values)).unwrap();
                 if (result?.token) {
                     sessionStorage.setItem('authToken', result.token);
+                    sessionStorage.setItem('useID', result.user.id);
                 }
                 toast.success("Tizimga muvaffaqiyatli kirildi");
                 navigate('/'); // yoki kerakli sahifa
