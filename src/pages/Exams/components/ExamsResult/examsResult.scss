@@ -5,6 +5,9 @@
 .mainRight{
   width: 30%;
 }
+.flexs{
+  display: flex;
+}
 .results{
   display: flex;
   justify-content: center;
@@ -115,4 +118,48 @@
   border-radius: 12px;
   font-weight: bold;
   cursor: pointer;
+}
+@media (max-width: 480px){
+  .flexs{
+    flex-direction: column;
+    overflow: hidden;
+    .mainCard{
+      width: 100%;
+      .cards{
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        padding: 0;
+        text-align: center;
+        width: 312px;
+        margin: auto;
+      }
+    }
+    .mainRight{
+      width: 100%;
+      margin-top: 50px;
+    }
+  }
+}
+@media (max-width: 767px){
+  .flexs{
+    flex-direction: column;
+    overflow: hidden;
+    .mainCard{
+      width: 100%;
+      .cards{
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        padding: 0;
+        text-align: center;
+        width: 312px;
+        margin: auto;
+      }
+    }
+    .mainRight{
+      width: 100%;
+      margin-top: 50px;
+    }
+  }
 }

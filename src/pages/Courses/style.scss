@@ -206,3 +206,31 @@
     }
   }
 }
+@media (max-width: 480px){
+  .courses{
+    flex-direction: column;
+    .courses_listCourse{
+      width: 100%;
+      .cards-container{
+        height: 70vh;
+      }
+    }
+    &_rights{
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 767px){
+  .courses{
+    flex-direction: column;
+    .courses_listCourse{
+      width: 100%;
+      .cards-container{
+        height: 70vh;
+      }
+    }
+    &_rights{
+      width: 100%;
+    }
+  }
+}

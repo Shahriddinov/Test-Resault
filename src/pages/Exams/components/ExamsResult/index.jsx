@@ -8,7 +8,7 @@ const ExamsResults = ({correct = 0, incorrect = 1, total = 1}) => {
 
     return (
         <Sidebar>
-            <div style={{display: "flex"}}>
+            <div className="flexs">
                 <div className="mainCard">
                     <h1 className="results">Общие знания - Результаты</h1>
                     <div className="cards">
