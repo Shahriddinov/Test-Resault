@@ -78,8 +78,15 @@
     padding: 24px;
     min-height: 280px;
   }
-
+  @media (max-width: 480px){
+    .sidebar__header{
+      justify-content: center;
+    }
+  }
   @media (max-width: 768px) {
+    .sidebar__header{
+      justify-content: center;
+    }
     .logo {
       font-size: 18px;
       padding: 10px;

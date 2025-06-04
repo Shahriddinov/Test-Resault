@@ -8,12 +8,14 @@
 
   &_stats {
     width: 70%;
+
     .flex {
       display: flex;
       gap: 10px;
       justify-content: space-between;
       margin-bottom: 10px;
     }
+
     .activity-wrapper {
       display: flex;
       justify-content: space-between;
@@ -257,23 +259,38 @@
     width: 30%;
   }
 }
+
 @media (max-width: 480px) {
+  .sidebar__right{
+    display: none;
+  }
+  .sidebar__content {
+    padding: 0;
+  }
   .dash {
     overflow: scroll;
+
     &::-webkit-scrollbar {
       display: none;
     }
+
     .dashboard {
       flex-direction: column;
+
       &_stats {
         width: 100%;
         margin-bottom: 20px;
+
         .flex {
           flex-direction: column;
         }
+
         &_card {
           width: 100%;
           margin-bottom: 10px;
+          &_des{
+            font-size: 16px;
+          }
           &_statsIcon {
             width: 50px;
             height: 50px;
@@ -281,6 +298,7 @@
             &_allIcon {
               font-size: 24px;
             }
+
             &_title {
               font-size: 14px;
             }
@@ -289,6 +307,7 @@
 
         .activity-wrapper {
           flex-direction: column;
+
           .chart-card {
             padding: 0;
           }
@@ -297,13 +316,17 @@
         .course-wrapper {
           margin-top: 20px;
         }
+
         .course-card {
           flex-wrap: wrap;
+          padding: 0;
         }
+
         .continue-btn {
           width: 176px;
         }
       }
+
       &_calendar {
         width: 100%;
       }
@@ -313,38 +336,52 @@
     overflow: scroll;
   }
 }
+
 @media (max-width: 767px) {
+  .sidebar__right{
+    display: none;
+  }
   .dash {
     overflow: scroll;
+
     &::-webkit-scrollbar {
       display: none;
     }
+
     .dashboard {
       flex-direction: column;
+
       &_stats {
         width: 100%;
         margin-bottom: 20px;
-        .flex {
-          flex-direction: column;
-        }
+
+
+
         &_card {
           width: 100%;
           margin-bottom: 10px;
+          padding: 5px;
+          &_des{
+            gap: 12px;
+            font-size: 13px;
+          }
           &_statsIcon {
-            width: 50px;
-            height: 50px;
+            width: 35px;
+            height: 35px;
 
             &_allIcon {
-              font-size: 24px;
+              font-size: 20px;
             }
+
             &_title {
-              font-size: 14px;
+              font-size: 10px;
             }
           }
         }
 
         .activity-wrapper {
           flex-direction: column;
+
           .chart-card {
             padding: 0;
           }
@@ -353,13 +390,17 @@
         .course-wrapper {
           margin-top: 20px;
         }
+
         .course-card {
           flex-wrap: wrap;
+          padding: 0;
         }
+
         .continue-btn {
-          width: 176px;
+          width: 100px;
         }
       }
+
       &_calendar {
         width: 100%;
       }
@@ -373,20 +414,26 @@
 @media (min-width: 768px) and (max-width: 1024px) {
   .dash {
     overflow: scroll;
+
     &::-webkit-scrollbar {
       display: none;
     }
+
     .dashboard {
       flex-direction: row;
+
       &_stats {
         width: 70%;
         margin-bottom: 20px;
+
         .flex {
           flex-direction: row;
         }
+
         &_card {
           width: 100%;
           margin-bottom: 10px;
+
           &_statsIcon {
             width: 50px;
             height: 50px;
@@ -394,6 +441,7 @@
             &_allIcon {
               font-size: 24px;
             }
+
             &_title {
               font-size: 14px;
             }
@@ -408,6 +456,7 @@
           flex-wrap: wrap;
         }
       }
+
       &_calendar {
         width: 30%;
       }

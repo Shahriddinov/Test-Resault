@@ -208,15 +208,41 @@
 }
 @media (max-width: 480px){
   .courses{
+    overflow: hidden;
     flex-direction: column;
     .courses_listCourse{
       width: 100%;
       .cards-container{
         height: 70vh;
+        .job-card{
+          padding: 0;
+        }
+        .job-header{
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+        .company{
+          font-size: 12px;
+          padding-bottom: 10px;
+        }
+        .position{
+          font-size: 20px;
+        }
+        .location{
+          font-size: 12px;
+        }
+      }
+      .googleIcon{
+        margin-bottom: 0;
+      }
+      .apply-btn{
+        padding: 10px 5px;
+        font-size: 10   px;
       }
     }
     &_rights{
       width: 100%;
+
     }
   }
 }
